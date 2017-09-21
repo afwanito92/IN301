@@ -1,40 +1,21 @@
-#include "graphics.h"
-int dessiner_etoile(POINT p1)
-{
-	POINT p,p2;
-	p.x = p1.x-5; p.y = p1.y;
-	p2.x = p1.x+5; p2.y = p1.y;
-	draw_line(p,p2,white);
-	p.x = p1.x; p.y = p1.y+5;
-	p2.x = p1.x; p2.y = p1.y-5;
-	draw_line(p,p2,white);
-	p.x = p1.x-5; p.y = p1.y-5;
-	p2.x = p1.x+5; p2.y = p1.y+5;
-	draw_line(p,p2,white);
-	p.x = p1.x-5; p.y = p1.y+5;
-	p2.x = p1.x+5; p2.y = p1.y-5;
-	draw_line(p,p2,white);
-}
+#include "stdio.h"
 
 
 int main()
 {
-init_graphics(900,600);
 // Debut du code
-POINT p1;
-int i=0;
-p1.x = 100; p1.y = 100;
+int a,b;
+char c,d;
 
-while (i<10)
-{
-	dessiner_etoile(p1);
-	p1.x = p1.x + 25;
-	p1.y = p1.y + 50;
-	i++;
+
+c=32;d=42;
+for(a=10; a>0; a--){
+	for(b=a;b>0;b--){
+		printf("%c",c);
+	}
+	printf("%c \n", d);
 }
-
+	return 0;	
+		
 // Fin du code
-
-wait_escape();
-exit(0);
 }
